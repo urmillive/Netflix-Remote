@@ -14,7 +14,6 @@ def start_video():
         repeat with win in windows
             repeat with t in tabs of win
                 if URL of t contains "netflix.com" then
-                    set active tab index of win to index of t
                     tell t to execute javascript "document.querySelector(\\\"video\\\").play();"
                     return
                 end if
@@ -35,7 +34,6 @@ def pause_video():
         repeat with win in windows
             repeat with t in tabs of win
                 if URL of t contains "netflix.com" then
-                    set active tab index of win to index of t
                     tell t to execute javascript "document.querySelector(\\\"video\\\").pause();"
                     return
                 end if
